@@ -133,6 +133,22 @@ ul.navigation a:focus-visible{
     transform: scale(1.1);
 }
 
+.vignette{
+    max-width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.galerie{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vignette-200{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
 
 
 @media screen AND (min-width: 600px) {
