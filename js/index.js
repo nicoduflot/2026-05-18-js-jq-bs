@@ -39,12 +39,38 @@ window.addEventListener('DOMContentLoaded', function(){
         erase_childs(document.getElementById(target));
         const reponse = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
         const data = await reponse.json();
-        createUser(data, target);
+        createUser(data, target);        
+    }
+
+    function parseJsonToList(data){
+        const ul = document.createElement('ul');
+        if(!data.length){
+            data = [data];
+        }
+        data.map(element=>{
+            for(key in element){
+                const li = document.createElement('li');
+                const b = document.createElement('b');
+                b.append(document.createTextNode(`${key} : `));
+                li.append(b);
+                if('object' !== typeof element[key]){
+                    const i = document.createElement('i');
+                    i.append(document.createTextNode(element[key]))
+                    li.append(i);
+                }else{
+                    li.append(parseJsonToList(element[key]));
+                }
+                ul.append(li);
+            }
+        });
+        return ul;
     }
 
     function createUser(user, target){
         const article = document.createElement('article');
-        article.classList.add('border');
+        article.classList.add('border', 'w-100');
+        article.append(parseJsonToList(user));
+        /*
         for(const key in user){
             if('object' !== typeof user[key]){
                 const p = document.createElement('p');
@@ -52,6 +78,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 article.append(p);
             }
         }
+        */
         document.getElementById(target).append(article);
     }
 
@@ -86,6 +113,7 @@ window.addEventListener('DOMContentLoaded', function(){
         linkUserPosts.append(document.createTextNode('Du même auteur'));
         linkUserPosts.addEventListener('click', event=>{
             event.preventDefault();
+            event.stopPropagation();
             userPosts(linkUserPosts.dataset.userid, target);
         });
         article.append(linkUserPosts);
@@ -108,10 +136,26 @@ window.addEventListener('DOMContentLoaded', function(){
         linkUser.append(document.createTextNode('Voir l\'auteur'));
         linkUser.addEventListener('click', event=>{
             event.preventDefault();
+            event.stopPropagation();
             getUser(linkUser.dataset.userid, target);
         });
         article.append(document.createElement('br'));
         article.append(linkUser);
+
+        /* Quand on survol un article, il grandit de 10% grâce à la classe highlight */
+        article.addEventListener('mouseenter', ()=>{
+            article.classList.add('highlight');
+        });
+        
+        article.addEventListener('mouseleave', ()=>{
+            article.classList.remove('highlight');
+        });
+
+        /* quand on clic sur un article, on zoom et dézoom */
+        article.addEventListener('click', ()=>{
+            article.classList.toggle('zoom');
+        });
+
         document.getElementById(target).append(article);
 
     }

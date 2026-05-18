@@ -129,9 +129,11 @@ ul.navigation a:focus-visible{
     box-shadow: 1px 1px 2px #333;
 }
 
-.catalog .highlight{
+.catalog .highlight, .zoom{
     transform: scale(1.1);
 }
+
+
 
 @media screen AND (min-width: 600px) {
     .conteneur{
@@ -152,6 +154,13 @@ ul.navigation a:focus-visible{
     .catalog > *{
         max-width: calc( 50% - 0.5rem);
     }
+    
+    .catalog > .w-100{
+        max-width: unset;
+        width: 100%;
+    }
+
+
 }
 
 @media screen AND (min-width: 1000px) {
