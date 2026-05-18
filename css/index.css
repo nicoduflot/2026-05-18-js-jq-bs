@@ -14,6 +14,11 @@
     --ok-color: white;
     --ok-border-color: rgb(31, 192, 31);
     --ok-border-color-active: rgb(25, 155, 25);
+    --neutre-bg-color: rgb(209, 209, 209);
+    --neutre-bg-color-active: rgb(227, 227, 227);
+    --neutre-color: #333;
+    --neutre-border-color: #333;
+    --neutre-border-color-active: #707070;
 }
 
 *, *::before, *::after{
@@ -58,6 +63,20 @@ body{
     background-color: var(--ok-bg-color-active);
     color: var(--ok-color);
     border-color: var(--ok-border-color-active);
+}
+
+.btn-neutre{
+    background-color: var(--neutre-bg-color);
+    border-color: var(--neutre-border-color);
+}
+
+.btn-neutre:hover,
+.btn-neutre:focus,
+.btn-neutre:focus-visible{
+    outline: 0;
+    background-color: var(--neutre-bg-color-active);
+    color: var(--neutre-color);
+    border-color: var(--neutre-border-color-active);
 }
 
 .conteneur{
