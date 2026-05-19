@@ -37,6 +37,12 @@ $(function(){
         });
     }
 
+    async function getUser(userid, target) {
+        $(target).empty();
+        const data = await $.get(`https://jsonplaceholder.typicode.com/users/${userid}`);
+        createUser(data, target);
+    }
+
     function createArticle(element, target){
         const article = $('<article>', {
             class: 'border'
@@ -62,32 +68,60 @@ $(function(){
             userPosts(linkUserPosts.data('userid'), target);
         });
         article.append(linkUserPosts);
+        linkUserPosts.after($('<br>'));
 
         /*
         transcription en jquery
         */
 
-        const linkUser = document.createElement('a');
-        linkUser.setAttribute('data-userid', element.userId);
-        linkUser.setAttribute('data-target', target);
-        linkUser.setAttribute('href', '#');
-        linkUser.append(document.createTextNode('Voir l\'auteur'));
-        linkUser.addEventListener('click', event=>{
+        const linkUser = $('<a>', {
+            'data-userid': element.userId,
+            'data-target': target,
+            href: '#'
+        }).text('Voir l\'auteur');
+        linkUser.on('click', event=>{
             event.preventDefault();
             event.stopPropagation();
-            getUser(linkUser.dataset.userid, target);
+            getUser(linkUser.data('userid'), target);
         });
-        article.append(document.createElement('br'));
         article.append(linkUser);
 
         $(target).append(article);
     }
 
-    function createUser(userId, target){
+    function createUser(user, target){
         /*
         transcrire le JS en JQuery
         */
-        
+        const article = $('<article>', {
+            class: 'border w-100'
+        });
+        article.append(parseJsonToList(user));
+        $(target).append(article);
+    }
+
+    function parseJsonToList(data){
+        const ul = $('<ul>');
+        if(!data.length){
+            data = [data];
+        }
+        data.map(element=>{
+            for(key in element){
+                const li = $('<li>');
+                const b = $('<b>');
+                b.text(`${key} : `);
+                li.append(b);
+                if('object' !== typeof element[key]){
+                    const i = $('<i>');
+                    i.text(element[key]);
+                    li.append(i);
+                }else{
+                    li.append(parseJsonToList(element[key]));
+                }
+                ul.append(li);
+            }
+        });
+        return ul;
     }
 
 });
