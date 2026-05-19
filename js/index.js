@@ -160,6 +160,12 @@ window.addEventListener('DOMContentLoaded', function(){
 
     }
 
+    const title = document.querySelector('h1');
+    console.log(title);
+    
 
+    const menu = document.querySelectorAll('nav ul.navigation[role="navigation"] li a');
+    console.log(menu);
+    
 
 });
