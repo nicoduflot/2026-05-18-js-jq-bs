@@ -97,11 +97,11 @@ window.addEventListener('DOMContentLoaded', function(){
 
     function createArticle(element, target){
         const article = document.createElement('article');
+        article.classList.add('border');
         const header = document.createElement('header');
         const h2 = document.createElement('h2');
         const content = document.createElement('p');
         const linkUserPosts = document.createElement('a');
-        article.classList.add('border');
         h2.append(document.createTextNode(element.title));
         header.append(h2);
         article.append(header);
