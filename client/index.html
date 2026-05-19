@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client</title>
     <link rel="stylesheet" href="./css/bootstrap.css" />
-    <script src="./js/jquery-3.2.1.slim.js"></script>
+    <script src="../js/jquery-4.0.0.js"></script>
     <script src="./js/popper.js"></script>
     <script src="./js/bootstrap.js"></script>
     <script src="./js/app.js"></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -30,24 +32,30 @@
     <main class="container">
         <section id="hero">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, modi ad provident maxime dicta voluptatem rem. Eveniet nulla quae eum, iste non officia ducimus, aliquam exercitationem earum a corporis. Placeat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, modi ad provident maxime dicta voluptatem
+                rem. Eveniet nulla quae eum, iste non officia ducimus, aliquam exercitationem earum a corporis. Placeat!
             </p>
             <p>
-                Quand on clique sur le bouton (attention, on n'a pas encore vules événements JQuery, faire un addeventlistener classique)
+                Quand on clique sur le bouton (attention, on n'a pas encore vules événements JQuery, faire un
+                addeventlistener classique)
             </p>
             <ul>
                 <li>
-                    ajoute la classe bootstrap .invisible si l'alerte est visible et on change le texte du bouton par "afficher l'alerte".
+                    ajoute la classe bootstrap .invisible si l'alerte est visible et on change le texte du bouton par
+                    "Afficher l'alerte".
                 </li>
                 <li>
-                    retire la classe bootstrap .invisible si l'alerte est invisible et on change le texte du bouton par "Cacher l'alerte".
+                    retire la classe bootstrap .invisible si l'alerte est invisible et on change le texte du bouton par
+                    "Cacher l'alerte".
                 </li>
             </ul>
             <button id="toggleAlert">Cacher l'alerte</button>
             <article>
                 <h2>Hero</h2>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis culpa iusto accusamus! Necessitatibus, magni pariatur perspiciatis omnis molestiae eaque blanditiis? Excepturi voluptate nihil cupiditate odio nemo commodi natus sunt molestiae.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis culpa iusto accusamus!
+                    Necessitatibus, magni pariatur perspiciatis omnis molestiae eaque blanditiis? Excepturi voluptate
+                    nihil cupiditate odio nemo commodi natus sunt molestiae.
                 </p>
             </article>
         </section>
@@ -59,8 +67,118 @@
                     </span>
                     <div class="card-body">
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
                         </p>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="testClick">test clic</button>
+                    </footer>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <article class="card">
+                    <span class="card-title">
+                        <h2>Produit</h2>
+                    </span>
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="testClickJq">test clic On</button>
+                    </footer>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <article class="card">
+                    <span class="card-title">
+                        <h2>Produit</h2>
+                    </span>
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
+                        </p>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="testClickOverJq">test clic On</button>
+                    </footer>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <article class="card">
+                    <span class="card-title">
+                        <h2>Produit</h2>
+                    </span>
+                    <div class="card-body">
+                        <p id="addP">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
+                        </p>
+                        <ul id="list">
+                            <li>Toto</li>
+                        </ul>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="testClickDeleg">test deleg</button>
+                    </footer>
+                </article>
+            </div>
+            <div class="col-lg-4">
+                <article class="card">
+                    <span class="card-title">
+                        <h2>Produit</h2>
+                    </span>
+                    <div class="card-body">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
+                        </p>
+                        <table id="tabDeleg">
+                            <tr>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>05</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>05</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>05</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>05</td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>05</td>
+                            </tr>
+                        </table>
                     </div>
                 </article>
             </div>
@@ -71,61 +189,26 @@
                     </span>
                     <div class="card-body">
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid
+                            rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum,
+                            praesentium ratione voluptate quis optio ad.
                         </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4">
-                <article class="card">
-                    <span class="card-title">
-                        <h2>Produit</h2>
-                    </span>
-                    <div class="card-body">
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4">
-                <article class="card">
-                    <span class="card-title">
-                        <h2>Produit</h2>
-                    </span>
-                    <div class="card-body">
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4">
-                <article class="card">
-                    <span class="card-title">
-                        <h2>Produit</h2>
-                    </span>
-                    <div class="card-body">
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
-                        </p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-lg-4">
-                <article class="card">
-                    <span class="card-title">
-                        <h2>Produit</h2>
-                    </span>
-                    <div class="card-body">
-                        <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit eius voluptatum aliquid rerum dolore voluptatibus aut possimus est, eligendi error consectetur quod omnis, earum, praesentium ratione voluptate quis optio ad.
-                        </p>
+                        <button class="toggleMenu" data-target="#menuArticle">Menu</button>
+                        <ul class="menu" id="menuArticle">
+                            <li>toto</li>
+                            <li>toto</li>
+                            <li>toto</li>
+                        </ul>
                     </div>
                 </article>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="container">
+            <p>&copy; DAWAN-2026</p>
+        </div>
+    </footer>
 </body>
+
 </html>
