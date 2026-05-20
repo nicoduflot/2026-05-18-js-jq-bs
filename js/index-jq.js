@@ -15,6 +15,10 @@ $(function(){
         $('#articles').empty();
         charger('#article');
     });
+    
+    $('#loadPosts').on('click', function(){
+        getPosts('');
+    });
 
     async function charger(target){
         /*
@@ -41,6 +45,16 @@ $(function(){
         $(target).empty();
         const data = await $.get(`https://jsonplaceholder.typicode.com/users/${userid}`);
         createUser(data, target);
+    }
+
+    function getPosts(target) {
+        $.ajax({
+            url: 'https://dummyjson.com/posts',
+            method: 'GET',
+            success: function(data){
+                console.log(data);
+            }
+        });
     }
 
     function createArticle(element, target){
