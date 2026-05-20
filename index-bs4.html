@@ -19,6 +19,7 @@
     Si on ne veut pas intégrer popper, il faut utiliser le fichier bootstrap.bundle.js car il contient ce qu'il faut de popper pour que bootstrap fonctionne correctement mais avec bs4 JQuery reste obligatoire
     -->
     <script src="./js/bootstrap-4.6.2.js"></script>
+    <script src="./js/index-bs4.js" defer></script>
 </head>
 
 <body>
@@ -65,6 +66,7 @@
         </div>
     </nav>
     <main class="container">
+        <h1>Mon asso, c'est cool</h1>
         <aside>
             <div id="last-info" role="alert" class="alert alert-success alert-dismissible fade show ">
                 <p>
@@ -73,12 +75,18 @@
                     aperiam dolor et molestiae architecto!
                 </p>
                 <p>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Fermer">
+                    <button role="button" type="button" class="close" data-dismiss="alert" aria-label="Fermer">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </p>
             </div>
         </aside>
+        <h2>Actualité de l'association</h2>
+        <p>
+            <button type="button" class="btn btn-info" id="welcomeButton">
+                Afficher les dernières news
+            </button>
+        </p>
     </main>
 </body>
 
