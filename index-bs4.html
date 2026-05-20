@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,59 @@
     Pour pouvoir utiliser les interactions de bootstrap 4, il faut absolument intégrer jquery 
     Les interaction de bootstrap 4 sont écrite en jquery dans le fichier bootstrap-4.6.2.js
     -->
-    <script src="./js/jquery-3.5.1.js" ></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <!--
+    Sans popper.js, en legacy, impossible d'utiliser les dropdowns ou les tooltips
+    -->
+    <script src="./js/popper-1.16.1.js"></script>
+    <!--
+    Si on ne veut pas intégrer popper, il faut utiliser le fichier bootstrap.bundle.js car il contient ce qu'il faut de popper pour que bootstrap fonctionne correctement mais avec bs4 JQuery reste obligatoire
+    -->
+    <script src="./js/bootstrap-4.6.2.js"></script>
 </head>
+
 <body>
+    <header class="bg-dark text-white">
+        <div class="container">
+            <span class="h1"><a href="./index-bs4.html" class="text-white">Mon asso</a></span>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mon asso</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
     
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index-bs4.html" title="accès à une page avec bootstrap 4">BS - 4 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html" title="mon asso en js natif">Index JS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index-jq.html" title="mon asso en jquery">Index JQ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Autres pages
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./client/index.html">Client</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./exercice-js.html">Exo JS</a>
+                            <a class="dropdown-item" href="./exercice-jq.html">Exo JQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
 </body>
+
 </html>
