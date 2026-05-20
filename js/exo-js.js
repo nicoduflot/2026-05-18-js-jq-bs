@@ -70,7 +70,7 @@ function createProduct(product, target){
     const description = document.createElement('p');
     description.append(document.createTextNode(product.description));
     const price = document.createElement('p');
-    price.append(document.createTextNode(`${product.price} €`))
+    price.append(document.createTextNode(`${product.price} €`));
     const galerie = document.createElement('div');
     galerie.classList.add('galerie');
     product.images.map(img=>{
