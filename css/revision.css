@@ -20,6 +20,8 @@ Il est possible d'importer du css à l'intérieur d'un autre fichier CSS, en rev
   font-size: var(--base-font-size);
   line-height: 1.5em;
   --goutiere: 0.5rem;
+  --hero-bg-color: rgba(255, 255, 0, 0.5);
+  --body-bg-color: white;
 }
 
 /* déclarations générales */
@@ -44,13 +46,25 @@ h6 {
 
 /* déclaration classes */
 
-.brand {
+.menu-toggle, .brand{
+  padding: calc(var(--goutiere) / 2) 0;
   display: inline-block;
   font-size: 1.5rem;
 }
 
-.brand > a {
-  padding: 0 0.5rem;
+.hero{
+    background-color: var(--hero-bg-color);
+    padding: calc( var(--goutiere) / 2 ) 0;
+}
+
+.hero article{
+    background-color: var(--body-bg-color);
+    padding: var(--goutiere);
+    margin-bottom: var(--goutiere);
+}
+
+.hero article header{
+    padding: calc( var(--goutiere) / 2) 0;
 }
 
 .my-auto {
@@ -100,8 +114,8 @@ h6 {
 .site-title {
   font-family: var(--title-font-family);
   text-transform: uppercase;
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: calc( 2rem + 2vw );
+  line-height: calc( 2.2rem + 2vw );;
 }
 
 figure.vignette {
@@ -197,6 +211,16 @@ body > header .site-title {
 main > header {
   padding: calc(var(--goutiere) / 2) 0;
   line-height: 2.5rem;
+  text-align: center;
+  background-color: var(--header-bg-color);
+  color: var(--nav-link-color);
+  letter-spacing: 5px;
+}
+
+main > header h1.site-title{
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 0 darkred;
+  font-weight: normal;
 }
 
 section > header {
@@ -205,7 +229,7 @@ section > header {
 
 /* media queries */
 @media (min-width: 768px) {
-  .brand {
+  .menu-toggle {
     display: none;
   }
 
