@@ -13,6 +13,11 @@
     margin-right: -.5rem;
 }
 
+.row > *{
+    width: 100%;
+    max-width: 100%;
+}
+
 [class^="col"] {
     padding-left: .5rem;
     padding-right: .5rem;
