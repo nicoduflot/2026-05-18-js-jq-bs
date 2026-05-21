@@ -33,8 +33,48 @@ h1, h2, h3, h4, h5, h6{
 
 /* déclaration classes */
 
+.my-auto{
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+.mx-auto{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.py-auto{
+    padding-top: auto !important;
+    padding-bottom: auto !important;
+}
+
+.px-auto{
+    padding-left: auto !important;
+    padding-right: auto !important;
+}
+
+.h-100{
+    height: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
 .img-rwd{
     max-width: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.justify-center{
+    justify-content: center;
 }
 
 .site-title{
@@ -44,10 +84,50 @@ h1, h2, h3, h4, h5, h6{
     line-height: 3rem;
 }
 
+figure.vignette{
+    width: 100%;
+    position: relative;
+    margin: 0;
+    background-color: #333;
+}
+
+figure.vignette::before{
+    display: block;
+    padding-top: 100%;
+    content: "";
+}
+
+figure.vignette > img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+figure.vignette > figcaption{
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 /* déclaration selon la structures des éléments et les classe si besoin */
 
 body{
     margin: 0;
+}
+
+body > header{
+    height: 25vh;
+    background: linear-gradient(rgba(255,255,255,0.6)), url(../images/galerie/world-eaters.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+body > header .site-title{
+    text-shadow: 3px 3px 0px yellow;
 }
 
 main > header{
