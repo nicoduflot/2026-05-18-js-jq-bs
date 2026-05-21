@@ -22,13 +22,13 @@
                     </div>
                 </div>
                 <script>
-                    document.querySelectorAll('a[data-toggle]').forEach(toggleItem=>{
-                        toggleItem.addEventListener('click', (event)=>{
+                    document.querySelectorAll('a[data-toggle]').forEach(toggleItem => {
+                        toggleItem.addEventListener('click', (event) => {
                             event.preventDefault();
                             document.getElementById(toggleItem.dataset.toggle).classList.toggle('show');
                             toggleItem.querySelector('i').classList.toggle('bi-list');
                             toggleItem.querySelector('i').classList.toggle('bi-x');
-                            
+
                         });
                     });
                 </script>
@@ -141,18 +141,18 @@
                         <figcaption>
                             Entry Info
                             Artist
-    
+
                             David Arroba
                             Category
-    
+
                             Diorama
-    
+
                             Position & Awards
-    
+
                             Gold & Slayer Sword
-    
+
                             Event
-    
+
                             AdeptiCon 2026 • Baird Center • North America
                         </figcaption>
                     </figure>
@@ -175,7 +175,8 @@
                         Les éléments sont calculé par défaut, par la feuille de style du navigateur, depuis le contenu.
                     </p>
                     <p>
-                        Si on déclare une largeur de 200px, puis une marge intérieure et une largeur de bordure, la taille
+                        Si on déclare une largeur de 200px, puis une marge intérieure et une largeur de bordure, la
+                        taille
                         totales de la boîte à l'écran sera de 200px + la marge intérieure + la largeur de la bordure.
                     </p>
                     <p>
@@ -191,10 +192,10 @@
                     <div
                         style="box-sizing: border-box; margin: 0.5rem;padding: 0.5rem; width: 200px;height: 100px;border: 3px solid green">
                     </div>
-    
-                    </div>
-                </article>
-            </section>
+
+        </div>
+        </article>
+        </section>
         </div>
     </main>
     <footer>
@@ -210,6 +211,49 @@
         en md : deux lignes, la première avec deux éléments, le troisième en dessous
         en lg : trois éléments côte à côte.
         -->
+        <div class="container">
+            <div class="row">
+                <nav class="col-md-6 col-lg-4">
+                    <form method="get" action="./revision-html-css.html">
+                        <label for="email-newsletter">Inscrivez-vous à la newsletter</label><br />
+                        <input type="email" required name="email-newsletter" id="email-newsletter" placeholder="email"
+                            aria-describedby="info-email"
+                            pattern="^[\w\-\+]+(\.[\w\-]+)*@[\w\-]+(\.[\w\-]+)*\.[\w\-]{2,15}$" /><br />
+                        <div id="info-email" class="i-block message message-info">
+                            Champ obligatoire.
+                        </div><br />
+                        <button type="submit" name="envoi-nl" id="envoi-nl"
+                            class="btn btn-secondary">S'inscrire</button>
+                    </form>
+                </nav>
+                <nav class="col-md-6 col-lg-4">
+                    <ul>
+                        <li><a href="#">CGV</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Qui-sommes-nous ?</a></li>
+                    </ul>
+                </nav>
+                <nav class="col-md-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                                Nous suivre
+                            </h4>
+                        </div>
+                        <ul class="reseaux">
+                            <li>
+                                <i class="bi bi-bluesky"></i>
+                            </li>
+                            <li>
+                                <i class="bi bi-facebook"></i>
+                            </li>
+                            <li><i class="bi bi-threads-fill"></i></li>
+                            <li><i class="bi bi-instagram"></i></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </footer>
 </body>
 

@@ -10,6 +10,7 @@ Il est possible d'importer du css à l'intérieur d'un autre fichier CSS, en rev
   --font-family: Arial, Helvetica, sans-serif;
   --nav-link-color: yellow;
   --nav-border-link-color: yellow;
+  --nav-border-link-color-50: rgba(255, 255, 0, 0.5);
   --nav-bg-color: #333;
   --header-bg-color: #333;
   --title-font-family: "spray me";
@@ -22,6 +23,9 @@ Il est possible d'importer du css à l'intérieur d'un autre fichier CSS, en rev
   --goutiere: 0.5rem;
   --hero-bg-color: rgba(255, 255, 0, 0.5);
   --body-bg-color: white;
+  --bg-secondary: grey;
+  --color-scondary: white;
+  --border-secondary: #d4d4d4;
 }
 
 /* déclarations générales */
@@ -46,25 +50,26 @@ h6 {
 
 /* déclaration classes */
 
-.menu-toggle, .brand{
+.menu-toggle,
+.brand {
   padding: calc(var(--goutiere) / 2) 0;
   display: inline-block;
   font-size: 1.5rem;
 }
 
-.hero{
-    background-color: var(--hero-bg-color);
-    padding: calc( var(--goutiere) / 2 ) 0;
+.hero {
+  background-color: var(--hero-bg-color);
+  padding: calc(var(--goutiere) / 2) 0;
 }
 
-.hero article{
-    background-color: var(--body-bg-color);
-    padding: var(--goutiere);
-    margin-bottom: var(--goutiere);
+.hero article {
+  background-color: var(--body-bg-color);
+  padding: var(--goutiere);
+  margin-bottom: var(--goutiere);
 }
 
-.hero article header{
-    padding: calc( var(--goutiere) / 2) 0;
+.hero article header {
+  padding: calc(var(--goutiere) / 2) 0;
 }
 
 .my-auto {
@@ -103,6 +108,10 @@ h6 {
   display: flex;
 }
 
+.i-block{
+    display: inline-block;
+}
+
 .align-center {
   align-items: center;
 }
@@ -111,11 +120,63 @@ h6 {
   justify-content: center;
 }
 
+.btn {
+  border: 1px solid transparent;
+  border-radius: calc(var(--goutiere) / 3);
+  padding: calc(var(--goutiere) / 2);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--color-scondary);
+  border-color: var(--border-secondary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:focus-visible {
+  opacity: 0.8;
+  cursor: pointer;
+  outline: none;
+}
+
+.message {
+  border: 2px solid transparent;
+  font-style: italic;
+  font-size: 0.7rem;
+  padding: calc(var(--goutiere) / 7);
+  margin: calc(var(--goutiere)) 0;
+}
+
+.message::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.message-info {
+  background-color: rgb(137, 174, 243);
+  border-color: rgb(90, 146, 250);
+  border-radius: calc(var(--goutiere) / 3);
+  color: var(--header-bg-color);
+}
+
+.message-info::before{
+    content: "\F430";
+}
+
 .site-title {
   font-family: var(--title-font-family);
   text-transform: uppercase;
-  font-size: calc( 2rem + 2vw );
-  line-height: calc( 2.2rem + 2vw );;
+  font-size: calc(2rem + 2vw);
+  line-height: calc(2.2rem + 2vw);
 }
 
 figure.vignette {
@@ -172,7 +233,8 @@ body > nav {
   background-color: var(--nav-bg-color);
 }
 
-body > nav ul {
+body > nav ul,
+body > footer ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -182,7 +244,8 @@ body > nav li:not(body > nav li:last-child) {
   border-bottom: 1px solid var(--nav-border-link-color);
 }
 
-body > nav a {
+body > nav a,
+body > footer a {
   color: var(--nav-link-color);
   text-decoration: none;
   display: block;
@@ -190,7 +253,10 @@ body > nav a {
 
 body > nav ul a:hover,
 body > nav ul a:focus,
-body > nav ul a:focus-visible {
+body > nav ul a:focus-visible,
+body > footer a:hover,
+body > footer a:focus,
+body > footer a:focus-visible {
   background-color: var(--nav-link-color);
   color: var(--nav-bg-color);
   outline: none;
@@ -217,7 +283,7 @@ main > header {
   letter-spacing: 5px;
 }
 
-main > header h1.site-title{
+main > header h1.site-title {
   font-size: 1.5rem;
   text-shadow: 2px 2px 0 darkred;
   font-weight: normal;
@@ -225,6 +291,41 @@ main > header h1.site-title{
 
 section > header {
   padding: var(--goutiere);
+}
+
+body > footer {
+  font-size: 0.8rem;
+  padding: var(--goutiere) 0;
+  background-color: var(--header-bg-color);
+  color: var(--nav-link-color);
+}
+
+body > footer ul.reseaux {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body > footer ul.reseaux li {
+  padding: 0 calc(var(--goutiere));
+}
+
+body > footer a {
+  padding: 0 1vw;
+}
+
+form input[type="email"] {
+  line-height: 1rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--nav-border-link-color);
+  border-radius: calc(var(--goutiere) / 3);
+  padding: calc(var(--goutiere) / 2);
+}
+
+form input[type="email"]:hover,
+form input[type="email"]:focus,
+form input[type="email"]:focus-visible {
+  outline: none;
+  box-shadow: 0px 0px 0px 3px var(--nav-border-link-color);
 }
 
 /* media queries */
