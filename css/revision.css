@@ -1,0 +1,17 @@
+
+:root{
+    --title-font-family: 'Impact';
+    --font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-family);
+    --base-font-size: 1.2rem;
+    font-size: var(--base-font-size);
+    line-height: 1.5em;
+}
+
+.img-rwd{
+    max-width: 100%;
+}
+
+body{
+    margin: 0;
+}
