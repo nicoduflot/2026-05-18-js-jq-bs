@@ -1,19 +1,25 @@
 /*
 Il est possible d'importer du css à l'intérieur d'un autre fichier CSS, en revanche, mis à par les commentaires, cela doit figurer dans les premières lignes lues par le navigateur
 */
-@import url('./bootstrap-icons.css');
-@import url('./spray-me.css');
+@import url("./bootstrap-icons.css");
+@import url("./spray-me.css");
 
 /* root */
 
-:root{
-    --title-font-family: 'spray me';
-    --font-family: Arial, Helvetica, sans-serif;
-    font-family: var(--font-family);
-    --base-font-size: 1.2rem;
-    font-size: var(--base-font-size);
-    line-height: 1.5em;
-    --goutiere: 0.5rem;
+:root {
+  --font-family: Arial, Helvetica, sans-serif;
+  --nav-link-color: yellow;
+  --nav-border-link-color: yellow;
+  --nav-bg-color: #333;
+  --header-bg-color: #333;
+  --title-font-family: "spray me";
+  --title-shadow-color: yellow;
+  --title-color: #333;
+  font-family: var(--font-family);
+  --base-font-size: 1.2rem;
+  font-size: var(--base-font-size);
+  line-height: 1.5em;
+  --goutiere: 0.5rem;
 }
 
 /* déclarations générales */
@@ -22,121 +28,204 @@ Il est possible d'importer du css à l'intérieur d'un autre fichier CSS, en rev
 le sélecteur css * permet de cibler TOUT les éléments du document
 */
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6{
-    margin-block-start: 0.5rem;
-    margin-block-end: 0.25rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.25rem;
 }
 
 /* déclaration classes */
 
-.my-auto{
-    margin-top: auto !important;
-    margin-bottom: auto !important;
+.brand {
+  display: inline-block;
+  font-size: 1.5rem;
 }
 
-.mx-auto{
-    margin-left: auto !important;
-    margin-right: auto !important;
+.brand > a {
+  padding: 0 0.5rem;
 }
 
-.py-auto{
-    padding-top: auto !important;
-    padding-bottom: auto !important;
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
 }
 
-.px-auto{
-    padding-left: auto !important;
-    padding-right: auto !important;
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.h-100{
-    height: 100%;
+.py-auto {
+  padding-top: auto !important;
+  padding-bottom: auto !important;
 }
 
-.w-100{
-    width: 100%;
+.px-auto {
+  padding-left: auto !important;
+  padding-right: auto !important;
 }
 
-.img-rwd{
-    max-width: 100%;
+.h-100 {
+  height: 100%;
 }
 
-.d-flex{
-    display: flex;
+.w-100 {
+  width: 100%;
 }
 
-.align-center{
-    align-items: center;
+.img-rwd {
+  max-width: 100%;
 }
 
-.justify-center{
-    justify-content: center;
+.d-flex {
+  display: flex;
 }
 
-.site-title{
-    font-family: var(--title-font-family);
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    line-height: 3rem;
+.align-center {
+  align-items: center;
 }
 
-figure.vignette{
-    width: 100%;
-    position: relative;
-    margin: 0;
-    background-color: #333;
+.justify-center {
+  justify-content: center;
 }
 
-figure.vignette::before{
-    display: block;
-    padding-top: 100%;
-    content: "";
+.site-title {
+  font-family: var(--title-font-family);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 3rem;
 }
 
-figure.vignette > img{
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+figure.vignette {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  background-color: #333;
 }
 
-figure.vignette > figcaption{
-    position: absolute;
-    bottom: 0;
-    font-size: 0.8rem;
-    font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.8);
+figure.vignette::before {
+  display: block;
+  padding-top: 100%;
+  content: "";
+}
+
+figure.vignette > img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+figure.vignette > figcaption {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease;
+}
+
+.collapse > * {
+  overflow: hidden;
+}
+
+.collapse.show {
+  grid-template-rows: 1fr;
 }
 
 /* déclaration selon la structures des éléments et les classe si besoin */
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-body > header{
-    height: 25vh;
-    background: linear-gradient(rgba(255,255,255,0.6)), url(../images/galerie/world-eaters.jpg) no-repeat center center;
-    background-size: cover;
+body > nav {
+  background-color: var(--nav-bg-color);
 }
 
-body > header .site-title{
-    text-shadow: 3px 3px 0px yellow;
+body > nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-main > header{
-    padding: 0.25rem 0;
-    line-height: 2.5rem;
+body > nav li:not(body > nav li:last-child) {
+  border-bottom: 1px solid var(--nav-border-link-color);
 }
 
-section > header{
-    padding: var(--goutiere);
+body > nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  display: block;
+}
+
+body > nav ul a:hover,
+body > nav ul a:focus,
+body > nav ul a:focus-visible {
+  background-color: var(--nav-link-color);
+  color: var(--nav-bg-color);
+  outline: none;
+}
+
+body > header {
+  height: 25vh;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.6)),
+    url(../images/galerie/world-eaters.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+body > header .site-title {
+  text-shadow: 3px 3px 0px var(--title-shadow-color);
+}
+
+main > header {
+  padding: calc(var(--goutiere) / 2) 0;
+  line-height: 2.5rem;
+}
+
+section > header {
+  padding: var(--goutiere);
 }
 
 /* media queries */
+@media (min-width: 768px) {
+  .brand {
+    display: none;
+  }
+
+  body > nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  body > nav li:not(body > nav li:last-child) {
+    border-bottom: unset;
+  }
+
+  body > nav a {
+    padding: 0 1vw;
+  }
+
+  .collapse {
+    display: block;
+    overflow: unset;
+    transition: none;
+  }
+}

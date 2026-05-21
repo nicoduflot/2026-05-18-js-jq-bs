@@ -12,19 +12,38 @@
 <body>
     <nav role="navigation">
         <div class="container">
-            <!-- 
-                Mettre en forme la navigation :
-                 * affichage device < 768 navigation empilé
-                 * affichage device >= 768 navigation en ligne
-
-            -->
-            <ul>
-                <li><a href="#">Les catégories</a></li>
-                <li><a href="#">Les participants</a></li>
-                <li><a href="#">Nos partenaire</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Concours</a></li>
-            </ul>
+            <div>
+                <div class="brand">
+                    <a href="#" data-toggle="menu-toggle"><i class="bi bi-list"></i></a>
+                </div>
+                <script>
+                    document.querySelectorAll('a[data-toggle]').forEach(toggleItem=>{
+                        toggleItem.addEventListener('click', (event)=>{
+                            event.preventDefault();
+                            document.getElementById(toggleItem.dataset.toggle).classList.toggle('show');
+                            toggleItem.querySelector('i').classList.toggle('bi-list');
+                            toggleItem.querySelector('i').classList.toggle('bi-x');
+                            
+                        });
+                    });
+                </script>
+                <!-- 
+                        Mettre en forme la navigation :
+                         * affichage device < 768 navigation empilé
+                         * affichage device >= 768 navigation en ligne
+        
+                    -->
+                <div class="collapse" id="menu-toggle">
+                    <ul>
+                        <li><a href="#">Les catégories</a></li>
+                        <li><a href="#">Les participants</a></li>
+                        <li><a href="#">Nos partenaire</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Concours</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         </div>
     </nav>
     <header role="banner">
@@ -34,72 +53,81 @@
             </div>
         </div>
     </header>
-    <main class="container">
+    <main>
         <header>
             <h1>Finalistes du Golden Demon Adepticon 2026</h1>
         </header>
-        <section class="row">
-            <header>
-                <h2>Slayer Sword</h2>
-            </header>
-            <article class="col-12 col-md-6 col-lg-4">
-                <h3>David Aroba</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet beatae sit, magni necessitatibus fuga.
-                </p>
-                <figure class="vignette">
-                    <img src="./images/galerie/slayer-sword.jpg" class="img-rwd" />
-                    <figcaption>
-                        Entry Info
-                        Artist
-
-                        David Arroba
-                        Category
-
-                        Diorama
-
-                        Position & Awards
-
-                        Gold & Slayer Sword
-
-                        Event
-
-                        AdeptiCon 2026 • Baird Center • North America
-                    </figcaption>
-                </figure>
-                <div style="font-size: 2em;margin: 10px;padding: 10px;">
-                    2em
+        <div class="container">
+            <section class="row">
+                <header>
+                    <h2>Slayer Sword</h2>
+                </header>
+                <article class="col-12 col-md-6 col-lg-4">
+                    <h3>David Aroba</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet beatae sit, magni necessitatibus
+                        fuga.
+                    </p>
+                    <figure class="vignette">
+                        <img src="./images/galerie/slayer-sword.jpg" class="img-rwd" />
+                        <figcaption>
+                            Entry Info
+                            Artist
+    
+                            David Arroba
+                            Category
+    
+                            Diorama
+    
+                            Position & Awards
+    
+                            Gold & Slayer Sword
+    
+                            Event
+    
+                            AdeptiCon 2026 • Baird Center • North America
+                        </figcaption>
+                    </figure>
                     <div style="font-size: 2em;margin: 10px;padding: 10px;">
                         2em
+                        <div style="font-size: 2em;margin: 10px;padding: 10px;">
+                            2em
+                        </div>
                     </div>
-                </div>
-                <div style="font-size: 2rem;margin: 10px;padding: 10px;">
-                    2rem
                     <div style="font-size: 2rem;margin: 10px;padding: 10px;">
                         2rem
+                        <div style="font-size: 2rem;margin: 10px;padding: 10px;">
+                            2rem
+                        </div>
                     </div>
-                </div>
-            </article>
-            <article class="col-12 col-md-6 col-lg-4">
-                <h3>Box-sizing</h3>
-                <p>
-                    Les éléments sont calculé par défaut, par la feuille de style du navigateur, depuis le contenu.
-                </p>
-                <p>
-                    Si on déclare une largeur de 200px, puis une marge intérieure et une largeur de bordure, la taille totales de la boîte à l'écran sera de 200px + la marge intérieure + la largeur de la bordure.
-                </p>
-                <p>
-                    C'est la propriétée <code>box-sizing</code> qui est définie en <code>content-box</code>
-                </p>
-                <p>
-                    Pour faciliter la création des boîtes, il faut définir tous les éléments comme étant calculés en <code>border-box</code>
-                </p>
-                <div style="box-sizing: content-box; margin: 0.5rem;padding: 0.5rem; width: 200px;height: 100px;border: 3px solid green"></div>
-                <div style="box-sizing: border-box; margin: 0.5rem;padding: 0.5rem; width: 200px;height: 100px;border: 3px solid green"></div>
-
-                </div>
-            </article>
-        </section>
+                </article>
+                <article class="col-12 col-md-6 col-lg-4">
+                    <h3>Box-sizing</h3>
+                    <p>
+                        Les éléments sont calculé par défaut, par la feuille de style du navigateur, depuis le contenu.
+                    </p>
+                    <p>
+                        Si on déclare une largeur de 200px, puis une marge intérieure et une largeur de bordure, la taille
+                        totales de la boîte à l'écran sera de 200px + la marge intérieure + la largeur de la bordure.
+                    </p>
+                    <p>
+                        C'est la propriétée <code>box-sizing</code> qui est définie en <code>content-box</code>
+                    </p>
+                    <p>
+                        Pour faciliter la création des boîtes, il faut définir tous les éléments comme étant calculés en
+                        <code>border-box</code>
+                    </p>
+                    <div
+                        style="box-sizing: content-box; margin: 0.5rem;padding: 0.5rem; width: 200px;height: 100px;border: 3px solid green">
+                    </div>
+                    <div
+                        style="box-sizing: border-box; margin: 0.5rem;padding: 0.5rem; width: 200px;height: 100px;border: 3px solid green">
+                    </div>
+    
+                    </div>
+                </article>
+            </section>
+        </div>
     </main>
 </body>
 
